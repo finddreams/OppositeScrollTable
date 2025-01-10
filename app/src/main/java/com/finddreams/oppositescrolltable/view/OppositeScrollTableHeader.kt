@@ -24,7 +24,10 @@ import com.finddreams.oppositescrolltable.CenterText
 import com.finddreams.oppositescrolltable.model.TableViewDataSet
 import com.finddreams.oppositescrolltable.model.TableViewHeaderEntity
 
-
+/**
+ * 滑动表格头部
+ * Copyright (c) finddreams https://github.com/finddreams
+ */
 @Composable
 internal fun ScrolledCellItemHeader(
     horizontalScrollState: ScrollState,

@@ -28,7 +28,10 @@ import com.finddreams.oppositescrolltable.model.TabViewItemsEntity
 import com.finddreams.oppositescrolltable.model.TableViewChildItemEntity
 import com.finddreams.oppositescrolltable.model.TableViewHeaderEntity
 
-
+/**
+ * 滑动表格子项
+ * Copyright (c) finddreams https://github.com/finddreams
+ */
 @Composable
 internal fun ScrollTableCellItem(
     horizontalScrollState: ScrollState,

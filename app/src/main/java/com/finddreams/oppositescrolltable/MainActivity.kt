@@ -18,7 +18,10 @@ import androidx.compose.ui.unit.dp
 import com.finddreams.oppositescrolltable.model.getOptionChainData
 import com.finddreams.oppositescrolltable.view.OppositeScrollTable
 import com.finddreams.oppositescrolltable.ui.theme.OppositeScrollListTheme
-
+/**
+ * 对称滑动表格
+ * Copyright (c) finddreams https://github.com/finddreams
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

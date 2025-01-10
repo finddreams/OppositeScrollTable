@@ -35,6 +35,10 @@ import com.finddreams.oppositescrolltable.model.TableViewHeaderEntity
 import com.finddreams.oppositescrolltable.model.getOptionChainData
 import com.finddreams.oppositescrolltable.ui.theme.ColorDivide
 
+/**
+ * 对称滑动表格
+ * Copyright (c) finddreams https://github.com/finddreams
+ */
 @Composable
 fun OppositeScrollTable(
     tableDataSet: TableViewDataSet,
