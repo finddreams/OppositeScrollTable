@@ -69,26 +69,26 @@ fun OppositeScrollTable(
     ) {
         ScrolledCellItemHeader(horizontalScrollState, tableDataSet, onHeaderClick = {})
         CommDivider()
-            LazyColumn() {
-                itemsIndexed(tableDataSet.childItems) { i, item ->
-                    Box(
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Column {
-                            ScrollTableCellItem(
-                                horizontalScrollState,
-                                item,
-                                headers,
-                                mSelectIndex == i,
-                                onItemClick = {
-                                    mSelectIndex = i
-                                })
-                            HorizontalDivider(color = ColorDivide)
-                        }
-                        IndicatorView(i, mIndicatorIndex, item)
+        LazyColumn() {
+            itemsIndexed(tableDataSet.childItems) { i, item ->
+                Box(
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Column {
+                        ScrollTableCellItem(
+                            horizontalScrollState,
+                            item,
+                            headers,
+                            mSelectIndex == i,
+                            onItemClick = {
+                                mSelectIndex = i
+                            })
+                        HorizontalDivider(color = ColorDivide)
                     }
+                    IndicatorView(i, mIndicatorIndex, item)
                 }
             }
+        }
 
     }
 }
