@@ -27,7 +27,6 @@ import com.finddreams.oppositescrolltable.drawSelectBorder
 import com.finddreams.oppositescrolltable.model.TabViewItemsEntity
 import com.finddreams.oppositescrolltable.model.TableViewChildItemEntity
 import com.finddreams.oppositescrolltable.model.TableViewHeaderEntity
-import com.finddreams.oppositescrolltable.testUIBorder
 
 /**
  * 滑动表格子项
