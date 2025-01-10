@@ -30,6 +30,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.finddreams.oppositescrolltable.CommDivider
+import com.finddreams.oppositescrolltable.model.TabViewItemsEntity
 import com.finddreams.oppositescrolltable.model.TableViewDataSet
 import com.finddreams.oppositescrolltable.model.TableViewHeaderEntity
 import com.finddreams.oppositescrolltable.model.getOptionChainData
@@ -68,7 +69,6 @@ fun OppositeScrollTable(
     ) {
         ScrolledCellItemHeader(horizontalScrollState, tableDataSet, onHeaderClick = {})
         CommDivider()
-        Box {
             LazyColumn() {
                 itemsIndexed(tableDataSet.childItems) { i, item ->
                     Box(
@@ -85,27 +85,34 @@ fun OppositeScrollTable(
                                 })
                             HorizontalDivider(color = ColorDivide)
                         }
-
-                        if (i == mIndicatorIndex) {
-                            CenterBox(
-                                modifier = Modifier
-                                    .align(Alignment.BottomCenter)
-                                    .offset(y = 10.dp)
-                            )
-                        }
-                        if (i == mIndicatorIndex + 1) {
-                            CenterBox(
-                                modifier = Modifier
-                                    .align(Alignment.TopCenter)
-                                    .offset(y = (-10).dp),
-                                text = item.childItemsMiddle
-                            )
-                        }
+                        IndicatorView(i, mIndicatorIndex, item)
                     }
                 }
             }
 
-        }
+    }
+}
+
+@Composable
+private fun BoxScope.IndicatorView(
+    i: Int,
+    mIndicatorIndex: Int,
+    item: TabViewItemsEntity
+) {
+    if (i == mIndicatorIndex) {
+        CenterBox(
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .offset(y = 10.dp)
+        )
+    }
+    if (i == mIndicatorIndex + 1) {
+        CenterBox(
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .offset(y = (-10).dp),
+            text = item.childItemsMiddle
+        )
     }
 }
 
