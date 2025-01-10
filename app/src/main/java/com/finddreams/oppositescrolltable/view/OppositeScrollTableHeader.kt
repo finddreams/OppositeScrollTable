@@ -24,7 +24,6 @@ import androidx.compose.ui.unit.sp
 import com.finddreams.oppositescrolltable.CenterText
 import com.finddreams.oppositescrolltable.model.TableViewDataSet
 import com.finddreams.oppositescrolltable.model.TableViewHeaderEntity
-import com.finddreams.oppositescrolltable.testUIBorder
 
 /**
  * 滑动表格头部
@@ -51,12 +50,12 @@ internal fun ScrolledCellItemHeader(
         horizontalArrangement = Arrangement.SpaceEvenly,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        RightMoveHeaderItemView(
+        MoveHeaderItemView(
             Modifier
                 .weight(0.5f), false, horizontalScrollState, localHeaderList, onHeaderClick
         )
         CenterText("行权价")
-        RightMoveHeaderItemView(
+        MoveHeaderItemView(
             Modifier
                 .weight(0.5f), true, horizontalScrollState, localHeaderList, onHeaderClick
         )
@@ -66,7 +65,7 @@ internal fun ScrolledCellItemHeader(
 
 
 @Composable
-private fun RightMoveHeaderItemView(
+private fun MoveHeaderItemView(
     modifier: Modifier,
     isRight: Boolean,
     horizontalScrollState: ScrollState,
