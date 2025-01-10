@@ -20,9 +20,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.finddreams.oppositescrolltable.CenterText
 import com.finddreams.oppositescrolltable.model.TableViewDataSet
 import com.finddreams.oppositescrolltable.model.TableViewHeaderEntity
+import com.finddreams.oppositescrolltable.testUIBorder
 
 /**
  * 滑动表格头部
@@ -93,8 +95,9 @@ private fun RightMoveHeaderItemView(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = " ${headerItem.title}",
-                        textAlign = TextAlign.Center
+                        text = headerItem.title,
+                        textAlign = TextAlign.Center,
+                        fontSize = 13.sp
                     )
                 }
             }

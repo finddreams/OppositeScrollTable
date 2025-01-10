@@ -17,7 +17,7 @@ fun getOptionChainData(size: Int): TableViewDataSet {
                 title = title,
                 width = when {
                     title.length >= 6 -> 110.dp
-                    title.length >= 4 -> 90.dp
+                    title.length >= 4 -> 80.dp
                     title.length == 2 -> 60.dp
                     else -> 70.dp
                 }

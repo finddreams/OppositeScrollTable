@@ -60,7 +60,7 @@ fun OppositeScrollTable(
         }
     }
     var mSelectIndex by remember { mutableIntStateOf(-1) }
-    var mIndicatorIndex by remember { mutableIntStateOf(5) }
+    var mIndicatorIndex by remember { mutableIntStateOf(7) }
 
     Column(
         modifier = Modifier

@@ -27,6 +27,7 @@ import com.finddreams.oppositescrolltable.drawSelectBorder
 import com.finddreams.oppositescrolltable.model.TabViewItemsEntity
 import com.finddreams.oppositescrolltable.model.TableViewChildItemEntity
 import com.finddreams.oppositescrolltable.model.TableViewHeaderEntity
+import com.finddreams.oppositescrolltable.testUIBorder
 
 /**
  * 滑动表格子项
@@ -106,16 +107,19 @@ private fun MoveItemView(
         modifier = Modifier
             .fillMaxHeight()
             .horizontalScroll(horizontalScrollState, reverseScrolling = isRight),
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = if (isRight) Arrangement.End else Arrangement.Start
     ) {
+        //左边的要倒着排序
         val displayedList = if (isRight) childItems else childItems.asReversed()
+        val displayedHeader = if (isRight) headerList else headerList.asReversed()
         displayedList.forEachIndexed { index, data ->
             Text(
                 text = data.value,
                 color = data.color ?: Color.Black,
                 textAlign = TextAlign.Center,
                 fontSize = data.textSize ?: 12.sp,
-                modifier = Modifier.width(headerList[index].width)
+                modifier = Modifier.width(displayedHeader[index].width)
             )
         }
     }

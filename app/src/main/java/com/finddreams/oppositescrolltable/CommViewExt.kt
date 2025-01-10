@@ -2,6 +2,7 @@ package com.finddreams.oppositescrolltable
 
 import android.content.res.Resources
 import android.util.TypedValue
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
@@ -142,4 +143,14 @@ fun Modifier.drawSelectBorder(
             )
         }
     }
+}
+/**
+ * 将数字转换成compose中的DP
+ */
+val Number.pxToDp
+    get() = Dp(toFloat() / Resources.getSystem().displayMetrics.density)
+
+@Composable
+fun Modifier.testUIBorder(): Modifier {
+    return this.border(1.pxToDp, color = Color.Red)
 }
